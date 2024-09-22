@@ -1,0 +1,55 @@
+import random
+def Res_Game(P1,COMP):
+    if(P1==COMP):
+        print("Tie")
+    else:
+        if(P1 in "Rr"):
+            if(COMP == "P"):
+                return "Computer wins"
+            elif(COMP=="S"):
+                return "Player wins"
+        if(P1 in "Pp"):
+            if(COMP == "S"):
+                return "Computer wins"
+            elif(COMP =="R"):
+                return "Player wins"
+        if(P1 in "Ss"):
+            if(COMP== "R"):
+                return "Computer wins"
+            elif(COMP== "P"):
+                return"Player wins"
+
+Choice_box=["R","P","S"]
+P=0
+C=0
+while(True):
+    x=input("Enter choice (Rock(R) / Paper(P) / Scissors(S) : ")
+    comp=random.randint(0,2)
+    com_choice=Choice_box[comp]
+    Win=Res_Game(x,com_choice)
+    print(Win)
+    
+    if("Computer" in Win):
+        C+=1
+    else:
+        P+=1
+    ch=input("Continue(Y/N)? : ")
+    if(ch in "Nn" ):
+        print("Player Wins: ",P)
+        print("Computer wins:",C)
+        break
+
+#OUTPUT#
+Enter choice (Rock(R) / Paper(P) / Scissors(S) : r
+Player wins
+Continue(Y/N)? : y
+Enter choice (Rock(R) / Paper(P) / Scissors(S) : p
+Computer wins
+Continue(Y/N)? : y
+Enter choice (Rock(R) / Paper(P) / Scissors(S) : s
+Player wins
+Continue(Y/N)? : n
+Player Wins:  2
+Computer wins: 1
+
+=== Code Execution Successful ===
